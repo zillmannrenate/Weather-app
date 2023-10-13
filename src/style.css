@@ -1,6 +1,4 @@
 body {
-  font-family: "Montserrat", sans-serif;
-  font-family: "Quicksand", sans-serif;
 }
 
 .container.weather-app {
@@ -13,9 +11,8 @@ body {
 }
 
 .current-weather {
-  font-family: "Qicksand", sans-serif;
   font-weight: 500;
-  color: rgb(48, 48, 48);
+  color: rgb(58, 57, 57);
   display: block;
   box-sizing: border-box;
   margin: 0 auto;
@@ -45,4 +42,37 @@ body {
 #farenheit {
   text-decoration: none;
   color: rgb(114, 211, 250);
+}
+
+#current-city,
+#current-country {
+  text-align: left;
+  margin-left: 10px;
+}
+
+#current-time,
+#current-date {
+  text-align: right;
+  margin-right: 10px;
+}
+
+#current-city,
+#current-time {
+  color: rgb(71, 78, 81);
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 60px;
+}
+
+#current-country,
+#current-date {
+  font-weight: 200;
+  font-size: 15px;
+}
+
+#weather-conditions {
+  color: grey;
+  text-align: center;
+  font-size: 65%;
+  padding: 20px 10px;
 }
