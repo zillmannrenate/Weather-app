@@ -103,3 +103,23 @@ input {
   color: rgb(55, 62, 65);
   padding: 0 15px;
 }
+
+.weekDays {
+  font-size: 65%;
+  color: grey;
+  margin: 0;
+  padding: 0;
+}
+
+.week-prediction {
+  margin-top: 70px;
+}
+
+.weekDays {
+  font-size: 65%;
+}
+
+.week-icons {
+  color: rgb(114, 211, 250);
+  font-size: 95%;
+}
