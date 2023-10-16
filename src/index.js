@@ -6,6 +6,11 @@ function displayTemperature(response) {
   defaultCity.innerHTML = response.data.name;
   let defaultCountry = document.querySelector("#current-country");
   defaultCountry.innerHTML = response.data.sys.country;
+  let defaultWind = document.querySelector("#wind");
+  defaultWind.innerHTML = Math.round(response.data.wind.speed);
+  let defaultHumid = document.querySelector("#humid");
+  defaultHumid.innerHTML = response.data.main.humidity;
+  let defaultPrecip = document.querySelector("#precip");
 }
 
 let apiKey = "437f0e611fbefb1c6c91a2a54a7dc521";
