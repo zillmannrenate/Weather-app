@@ -20,3 +20,14 @@ let city = "Vienna";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemperature);
+
+function displayPrecipitation(response) {
+  console.log(response);
+  console.log(response.data.list[0].pop);
+  let defaultPrecip = document.querySelector("#precip");
+  defaultPrecip.innerHTML = response.data.list[0].pop * 100;
+}
+
+let apiFCUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
+
+axios.get(apiFCUrl).then(displayPrecipitation);
