@@ -37,7 +37,7 @@ function formatDate() {
 
 function displayTemperature(response) {
   let defaultTemperature = document.querySelector("#current-temperature");
-  defaultTemperature.innerHTML = Math.round(response.data.main.temp);
+  defaultTemperature.innerHTML = Math.round(response.data.main.temp) + "°";
   let defaultCity = document.querySelector("#current-city");
   defaultCity.innerHTML = response.data.name;
   let defaultCountry = document.querySelector("#current-country");
@@ -67,8 +67,7 @@ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
 axios.get(apiUrl).then(displayTemperature);
 
 function displayPrecipitation(response) {
-  console.log(response);
-  console.log(response.data.list[0].pop);
+  //console.log(response.data.list[0].pop);
   let defaultPrecip = document.querySelector("#precip");
   defaultPrecip.innerHTML = response.data.list[0].pop * 100;
 }
@@ -77,8 +76,21 @@ let apiFCUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid
 
 axios.get(apiFCUrl).then(displayPrecipitation);
 
-//function displayCity(response){}
+function searchCity(city) {
+  let apiKey = "437f0e611fbefb1c6c91a2a54a7dc521";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiFUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
 
-//let cityForm = document.querySelector("#locationform");
-//cityForm.addEventListener("click", displayCity());
-//console.log(response);
+  console.log(city);
+  axios.get(apiUrl).then(displayTemperature);
+  axios.get(apiFUrl).then(displayPrecipitation);
+}
+
+function handleSubmit(event) {
+  let locationInput = document.querySelector("#location-input");
+  let selectedCity = locationInput.value;
+  searchCity(selectedCity);
+}
+
+let cityForm = document.querySelector("#location-form");
+cityForm.addEventListener("submit", handleSubmit);
