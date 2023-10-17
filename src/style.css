@@ -49,6 +49,9 @@ body {
   font-weight: 100;
   scale: 85%;
   color: grey;
+}
+
+#description:first-letter {
   text-transform: capitalize;
 }
 
