@@ -18,21 +18,26 @@
   top: 50px;
 }
 
-#big-icon {
+#weather-icon {
+  display: inline-block;
   font-size: 55px;
   color: rgb(114, 211, 250);
   padding: 13px 0 0 0;
+  position: relative;
+  right: 10px;
 }
 
 #current-temperature {
   font-size: 55px;
+  position: relative;
+  right: 10px;
 }
 
 #degrees {
   text-align: center;
   color: grey;
   position: relative;
-  bottom: 125px;
+  bottom: 130px;
 }
 #celsius,
 #farenheit {
@@ -46,6 +51,8 @@
   font-weight: 100;
   scale: 85%;
   color: grey;
+  position: relative;
+  bottom: 20px;
 }
 
 #description:first-letter {

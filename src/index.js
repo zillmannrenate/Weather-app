@@ -52,6 +52,12 @@ function displayTemperature(response) {
   defaultTime.innerHTML = formatTime();
   let defaultDate = document.querySelector("#current-date");
   defaultDate.innerHTML = formatDate();
+  let bigIcon = document.querySelector("#big-icon");
+  let iconCode = response.data.weather[0].icon;
+  bigIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${iconCode}@2x.png`
+  );
 }
 
 let apiKey = "437f0e611fbefb1c6c91a2a54a7dc521";
@@ -71,4 +77,8 @@ let apiFCUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid
 
 axios.get(apiFCUrl).then(displayPrecipitation);
 
+//function displayCity(response){}
+
+//let cityForm = document.querySelector("#locationform");
+//cityForm.addEventListener("click", displayCity());
 //console.log(response);
