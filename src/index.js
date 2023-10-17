@@ -10,7 +10,9 @@ function displayTemperature(response) {
   defaultWind.innerHTML = Math.round(response.data.wind.speed);
   let defaultHumid = document.querySelector("#humid");
   defaultHumid.innerHTML = response.data.main.humidity;
-  let defaultPrecip = document.querySelector("#precip");
+  //let defaultPrecip = document.querySelector("#precip");
+  let defaultDescription = document.querySelector("#description");
+  defaultDescription.innerHTML = response.data.weather[0].description;
 }
 
 let apiKey = "437f0e611fbefb1c6c91a2a54a7dc521";

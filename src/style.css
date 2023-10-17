@@ -36,12 +36,20 @@ body {
   font-weight: 900;
   color: grey;
   position: relative;
-  bottom: 95px;
+  bottom: 125px;
 }
 #celsius,
 #farenheit {
   text-decoration: none;
   color: rgb(114, 211, 250);
+}
+
+#description {
+  text-align: center;
+  font-weight: 100;
+  scale: 85%;
+  color: grey;
+  text-transform: capitalize;
 }
 
 #current-city,
@@ -75,6 +83,7 @@ body {
   text-align: center;
   font-size: 65%;
   padding: 20px 10px;
+  font-weight: 100;
 }
 
 input {
