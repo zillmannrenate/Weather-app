@@ -1,6 +1,3 @@
-body {
-}
-
 .container.weather-app {
   border: 1px solid grey;
   border-radius: 3px;
@@ -33,7 +30,6 @@ body {
 
 #degrees {
   text-align: center;
-  font-weight: 900;
   color: grey;
   position: relative;
   bottom: 125px;
@@ -42,6 +38,7 @@ body {
 #farenheit {
   text-decoration: none;
   color: rgb(114, 211, 250);
+  font-weight: 900;
 }
 
 #description {

@@ -13,8 +13,29 @@ function formatTime(timestamp) {
   return `${day}, ${hours}:${minutes}`;
 }
 
+function formatDate() {
+  let date = new Date();
+  let day = date.getDate();
+  let months = [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+  ];
+  let month = months[date.getMonth()];
+  let year = date.getFullYear();
+  return `${day}.${month}.${year}`;
+}
+
 function displayTemperature(response) {
-  console.log(response);
   let defaultTemperature = document.querySelector("#current-temperature");
   defaultTemperature.innerHTML = Math.round(response.data.main.temp);
   let defaultCity = document.querySelector("#current-city");
@@ -29,8 +50,8 @@ function displayTemperature(response) {
   defaultDescription.innerHTML = response.data.weather[0].description;
   let defaultTime = document.querySelector("#current-time");
   defaultTime.innerHTML = formatTime();
-  //let defaultDate = document.querySelector("#current-date");
-  //defaultDate.innerHTML = formatDate();
+  let defaultDate = document.querySelector("#current-date");
+  defaultDate.innerHTML = formatDate();
 }
 
 let apiKey = "437f0e611fbefb1c6c91a2a54a7dc521";
@@ -50,4 +71,4 @@ let apiFCUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid
 
 axios.get(apiFCUrl).then(displayPrecipitation);
 
-let;
+//console.log(response);
