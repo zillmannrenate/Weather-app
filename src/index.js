@@ -122,3 +122,21 @@ farenheitLink.addEventListener("click", showFarenheit);
 
 let celsiusLink = document.querySelector("#celsius");
 celsiusLink.addEventListener("click", showCelsius);
+
+function showLocation(position) {
+  let lon = position.coords.longitude;
+  let lat = position.coords.latitude;
+  console.log(position);
+  let apiKey = "437f0e611fbefb1c6c91a2a54a7dc521";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showLocation);
+}
+
+let locateButton = document.querySelector("#locate-user");
+locateButton.addEventListener("click", getCurrentLocation);
