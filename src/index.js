@@ -35,6 +35,28 @@ function formatDate() {
   return `${day}.${month}.${year}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector(".forecast");
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  let forecastHTML = `<div class="row g-0 weekDays">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col">
+            <div class="day1">${day}</div>
+            <i class="fa-solid fa-cloud"></i>
+            <div class="forecast-temperature">
+              <span class="max">18°</span>
+              <span class="min"> 10°</span>
+            </div>
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 function displayTemperature(response) {
   let defaultTemperature = document.querySelector("#current-temperature");
   celsiusTemperature = Math.round(response.data.main.temp);
@@ -140,3 +162,5 @@ function getCurrentLocation(event) {
 
 let locateButton = document.querySelector("#locate-user");
 locateButton.addEventListener("click", getCurrentLocation);
+
+displayForecast();

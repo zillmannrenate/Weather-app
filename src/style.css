@@ -132,17 +132,28 @@ input {
   padding: 0;
 }
 
-.week-prediction {
+.forecast {
   margin-top: 30px;
 }
 
 .weekDays {
   font-size: 65%;
+  text-align: center;
 }
 
 .week-icons {
   color: rgb(114, 211, 250);
   font-size: 95%;
+}
+
+.forecast-temperature {
+  color: grey;
+  font-size: 60%;
+}
+
+.max {
+  color: rgb(58, 57, 57);
+  font-weight: 700;
 }
 
 #footer {
