@@ -141,14 +141,12 @@ input {
   text-align: center;
 }
 
-.week-icons {
-  color: rgb(114, 211, 250);
-  font-size: 95%;
+.forecast-icons {
+  height: 30px;
 }
 
 .forecast-temperature {
   color: grey;
-  font-size: 60%;
 }
 
 .max {
