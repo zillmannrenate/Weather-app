@@ -35,7 +35,8 @@ function formatDate() {
   return `${day}.${month}.${year}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector(".forecast");
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   let forecastHTML = `<div class="row g-0 weekDays">`;
@@ -55,6 +56,12 @@ function displayForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
   console.log(forecastHTML);
+}
+
+function getForecast(coordinates) {
+  let apiKey = "46fac47dd8b8fa26d1b6852218ad3dfe";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -83,6 +90,8 @@ function displayTemperature(response) {
   );
   celsiusLink.classList.add("active");
   farenheitLink.classList.remove("active");
+
+  getForecast(response.data.coord);
 }
 
 let apiKey = "437f0e611fbefb1c6c91a2a54a7dc521";
@@ -162,5 +171,3 @@ function getCurrentLocation(event) {
 
 let locateButton = document.querySelector("#locate-user");
 locateButton.addEventListener("click", getCurrentLocation);
-
-displayForecast();
